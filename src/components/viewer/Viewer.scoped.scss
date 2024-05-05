@@ -1,0 +1,36 @@
+.viewer__wrapper{
+  width:100%;
+  min-height: 15rem;
+  
+  padding: 0.5rem;
+  &--dark{
+    background-color: #728799;
+  }
+  &--light{
+    background-color: #b2c7d9;
+  }
+}
+
+.viewer__text{
+  display: inline-block;
+  margin: 0.4rem 0 0.4rem 0;
+  padding: 0.2rem;
+  border-radius: 0.2rem 0.2rem;
+  &--left {
+    text-align: left;
+    background-color: white;
+    @at-root .viewer__text--dark#{&}{
+      background-color: #666;    
+    }
+  }
+  &--right{
+    background-color: #ffee33;
+    @at-root .viewer__text--dark#{&}{
+      background-color: #bb8811;    
+    }
+  }
+  &--highlight{
+    border: medium solid rgb(221, 1, 1);
+  }
+}
+

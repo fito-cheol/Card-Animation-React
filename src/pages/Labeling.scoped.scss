@@ -1,0 +1,24 @@
+.labeling__row{
+  padding: 0.5rem 0.3rem 0.5rem 0.3rem;
+  &--file{
+    background-color: transparent;
+  }
+  &--meta{
+    background-color:transparent;
+  }
+  &--control{
+    background-color:transparent;
+  }
+}
+.input{
+  padding: 0.4rem 1.1rem;
+  font-size: 0.9rem;
+  color:white;
+  background-color:#cc4400;
+  border-radius: .25rem;
+  cursor: pointer;
+  &--dark{
+    color:black;
+    background-color:#ee4433;
+  }
+}
