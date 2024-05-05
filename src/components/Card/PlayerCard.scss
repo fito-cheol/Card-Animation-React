@@ -1,0 +1,10 @@
+.container {
+  width: 250px;
+  height: 400px;
+  transition: all 0.2s;
+  position: relative;
+  flex-wrap: 'wrap';
+  overflow: hidden;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+}

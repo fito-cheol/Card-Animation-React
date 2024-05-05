@@ -10,7 +10,17 @@ declare global {
     x: number;
     y: number;
   }
-
+  interface Player {
+    id?: number;
+    nickName: string;
+    picture?: string;
+    uniformNumber?: number;
+    role: number;
+    team?: {
+      id: number;
+      name: string;
+    };
+  }
   interface Shape {
     name: string;
     coordinates: Coordinate[];
