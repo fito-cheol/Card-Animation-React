@@ -5,7 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ColorModeContext } from './context/ColorModeContext';
-import PlayerCard from 'components/Card/PlayerCard';
+import PlayerCard from './components/Card/PlayerCard';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -39,12 +39,10 @@ function App() {
         <div className='container'>
           <PlayerCard
             player={{
-              player: {
-                nickName: '손흥민',
-                role: 0,
-                picture:
-                  'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcT8lnTegzfhRU7K4n1y2VgQhUyVmFZWCnyNPFQnVT6Iw4ScgKoIoGPvNvmmoGTg2NSAzdAXifddiiumynE',
-              },
+              nickName: '손흥민',
+              role: 0,
+              picture:
+                'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcT8lnTegzfhRU7K4n1y2VgQhUyVmFZWCnyNPFQnVT6Iw4ScgKoIoGPvNvmmoGTg2NSAzdAXifddiiumynE',
             }}
           />
         </div>

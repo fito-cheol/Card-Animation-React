@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { within, userEvent, expect } from '@storybook/test';
 
 import PlayerCard from './PlayerCard';
 
 const meta = {
-  title: 'Example/PlayerCard',
+  title: 'Card/PlayerCard',
   component: PlayerCard,
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout

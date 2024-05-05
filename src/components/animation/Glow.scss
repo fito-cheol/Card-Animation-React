@@ -12,33 +12,11 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 1;
-  // background-repeat: no-repeat;
-  background: radial-gradient(#0f0, transparent, transparent);
-  /* transition: 0.1s; */
+  z-index: 2;
+  background: radial-gradient(#aaa, transparent, transparent);
   opacity: 0.1;
+  mix-blend-mode: normal;
   &:hover {
     opacity: 1;
-  }
-}
-
-.overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 1;
-
-  &--line {
-    background: linear-gradient(
-      110deg,
-      transparent 25%,
-      rgba(255, 219, 112, 0.8) 45%,
-      rgba(132, 150, 200, 0.4) 60%,
-      transparent 54%
-    );
-    filter: brightness(2) opacity(0.4);
-    mix-blend-mode: color-dodge;
-    background-size: 150%, 150%;
-    background-position: 100%;
   }
 }

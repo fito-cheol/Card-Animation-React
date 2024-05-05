@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Glow from './Glow';
+import Line from './Line';
 
 const meta = {
-  title: 'Card/Glow',
-  component: Glow,
+  title: 'Card/Line',
+  component: Line,
   decorators: [
     Story => (
       <Story>
@@ -26,14 +26,14 @@ const meta = {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
   },
-} satisfies Meta<typeof Glow>;
+} satisfies Meta<typeof Line>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const 카드: Story = {
   render: args => (
-    <Glow>
+    <Line>
       <div
         style={{
           width: '320px',
@@ -46,6 +46,6 @@ export const 카드: Story = {
           position: 'relative',
         }}
       ></div>
-    </Glow>
+    </Line>
   ),
 };

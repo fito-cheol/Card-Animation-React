@@ -6,5 +6,7 @@
   flex-wrap: 'wrap';
   overflow: hidden;
   border-radius: 10px;
+
   transform-style: preserve-3d;
+  mix-blend-mode: color-dodge;
 }
