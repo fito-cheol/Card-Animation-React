@@ -22,7 +22,7 @@ export const 카드: Story = {
             width: '320px',
             height: '400px',
             borderRadius: '20px',
-            background: 'rgba(45,45,45,1)',
+            background: 'rgba(45,45,45,0.3)',
             display: 'flex',
             flexWrap: 'wrap',
             overflow: 'hidden',

@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 export default function useMouse() {
   const [position, setPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [positionFromCenter, setPositionFromCenter] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [rotation, setRotation] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   const [positionPercent, setPositionPercent] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -16,18 +17,23 @@ export default function useMouse() {
     const offsetX = clientX - centerX;
     const offsetY = clientY - centerY;
 
-    const rotateX = -offsetY / 7; // Adjust the division value for sensitivity
-    const rotateY = offsetX / 3;
+    const leftX = clientX - left;
+    const topX = clientY - top;
+
+    const rotateX = offsetY / 8; // Adjust the division value for sensitivity
+    const rotateY = -offsetX / 5;
 
     const leftPercent = ((clientX - left) / width) * 100;
     const topPercent = ((clientY - top) / height) * 100;
-    setPosition({ x: offsetX, y: offsetY });
+    setPosition({ x: leftX, y: topX });
+    setPositionFromCenter({ x: offsetX, y: offsetY });
     setRotation({ x: rotateX, y: rotateY });
     setPositionPercent({ x: leftPercent, y: topPercent });
   }
 
   const handleMouseLeave = () => {
     setPosition({ x: 0, y: 0 });
+    setPositionFromCenter({ x: 0, y: 0 });
     setRotation({ x: 0, y: 0 });
     setPositionPercent({ x: 25, y: 10 });
   };
@@ -39,8 +45,8 @@ export default function useMouse() {
       0,
       1,
     ),
-    '--pointer-from-top': position.y / 100,
-    '--pointer-from-left': position.x / 100,
+    '--pointer-from-top': position.y / 1000,
+    '--pointer-from-left': position.x / 1000,
     '--card-opacity': 1,
     '--rotate-x': `${rotation.x}deg`,
     '--rotate-y': `${rotation.y}deg`,

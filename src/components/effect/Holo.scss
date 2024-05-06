@@ -8,6 +8,31 @@
 }
 
 .holo {
+  display: grid;
+  filter: brightness(0.85) contrast(2.75) saturate(0.65);
+  border-radius: 20px;
+  background: transparent;
+  background-size: cover;
+  background-position: center;
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  z-index: 2;
+
+  overflow: hidden;
+
+  // background-image: radial-gradient(
+  //   farthest-corner circle at var(--pointer-x) var(--pointer-y),
+  //   hsla(0, 0%, 100%, 0.8) 10%,
+  //   hsla(0, 0%, 100%, 0.65) 20%,
+  //   hsla(0, 0%, 0%, 0.5) 90%
+  // );
+
+  opacity: var(--card-opacity);
+  mix-blend-mode: overlay;
+
   --foil: url('https://poke-holo.b-cdn.net/foils/swsh12/foils/upscaled/146_foil_holo_reverse_2x.webp');
   --foil-brightness: 0.55;
   &--lightning {
@@ -19,6 +44,8 @@
   &--metal {
     --foil-brightness: 0.6;
   }
+  background: transparent;
+
   background-image: radial-gradient(circle at var(--pointer-x) var(--pointer-y), #fff 5%, #000 50%, #fff 80%),
     linear-gradient(-45deg, #000 15%, #fff, #000 85%), var(--foil);
 
