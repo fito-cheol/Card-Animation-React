@@ -1,0 +1,34 @@
+.holo__wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: 'flex';
+  flex-wrap: 'wrap';
+  overflow: 'hidden';
+}
+
+.holo {
+  --foil: url('https://poke-holo.b-cdn.net/foils/swsh12/foils/upscaled/146_foil_holo_reverse_2x.webp');
+  --foil-brightness: 0.55;
+  &--lightning {
+    --foil-brightness: 0.7;
+  }
+  &--darkness {
+    --foil-brightness: 0.8;
+  }
+  &--metal {
+    --foil-brightness: 0.6;
+  }
+  background-image: radial-gradient(circle at var(--pointer-x) var(--pointer-y), #fff 5%, #000 50%, #fff 80%),
+    linear-gradient(-45deg, #000 15%, #fff, #000 85%), var(--foil);
+
+  background-blend-mode: soft-light, difference;
+  background-size: 120% 120%, 200% 200%, cover;
+  background-position: center center, calc((100% * var(--pointer-from-left))) calc((100% * var(--pointer-from-top))),
+    center center;
+
+  filter: brightness(var(--foil-brightness)) contrast(1.5) saturate(1);
+  mix-blend-mode: color-dodge;
+
+  opacity: calc((1.5 * var(--card-opacity)) - var(--pointer-from-center));
+}

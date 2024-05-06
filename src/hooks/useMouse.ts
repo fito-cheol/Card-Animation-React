@@ -1,4 +1,4 @@
-import { clamp } from '@/utils/Math';
+import { clamp } from '../utils/Math';
 import { useState } from 'react';
 
 export default function useMouse() {
