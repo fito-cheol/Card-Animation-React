@@ -1,5 +1,3 @@
-$body-font-family: 'Montserrat', 'Noto Sans KR', sans-serif !important !default;
-
 $--pointer-x: 25% !important;
 $--pointer-y: 10% !important;
 $--card-scale: 1.1 !important;
@@ -21,3 +19,7 @@ $--blue: #0dbde9;
 $--violet: #c929f1;
 
 $--clip: inset(9.85% 8% 52.85% 8%);
+
+$--scanlines-space: 1px;
+$--scanlines-light: #666;
+$--scanlines-dark: black;
