@@ -8,14 +8,27 @@
 }
 
 .glow {
-  filter: brightness(1.2) opacity(0.8);
+  display: grid;
+  filter: brightness(0.85) contrast(2.75) saturate(0.65);
+
+  border-radius: 20px;
+  background: transparent;
+  background-size: cover;
+  background-position: center;
+
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 2;
-  background: radial-gradient(#aaa, transparent, transparent);
-  opacity: 0.1;
-  mix-blend-mode: normal;
+  background: radial-gradient(
+    farthest-corner circle at var(--pointer-x) var(--pointer-y),
+    hsla(0, 50%, 100%, 0.8) 10%,
+    hsla(0, 0%, 100%, 0.65) 20%,
+    transparent,
+    transparent
+  );
+  opacity: 1;
+  mix-blend-mode: overlay;
   &:hover {
     opacity: 1;
   }
