@@ -1,4 +1,4 @@
-import { clamp } from '../utils/Math';
+import { adjust, clamp } from '../utils/Math';
 import { useState } from 'react';
 
 export default function useMouse() {
@@ -7,6 +7,7 @@ export default function useMouse() {
   const [rotation, setRotation] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   const [positionPercent, setPositionPercent] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [background, setBackground] = useState<{ x: number; y: number }>({ x: 50, y: 50 });
 
   function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
     const { clientX, clientY, currentTarget } = event;
@@ -29,6 +30,7 @@ export default function useMouse() {
     setPositionFromCenter({ x: offsetX, y: offsetY });
     setRotation({ x: rotateX, y: rotateY });
     setPositionPercent({ x: leftPercent, y: topPercent });
+    setBackground({ x: adjust(leftPercent, 0, 100, 37, 63), y: adjust(topPercent, 0, 100, 33, 67) });
   }
 
   const handleMouseLeave = () => {
@@ -36,6 +38,7 @@ export default function useMouse() {
     setPositionFromCenter({ x: 0, y: 0 });
     setRotation({ x: 0, y: 0 });
     setPositionPercent({ x: 25, y: 10 });
+    setBackground({ x: 50, y: 50 });
   };
   const dynamicStyles = {
     '--pointer-x': `${positionPercent.x}%`,
@@ -50,9 +53,10 @@ export default function useMouse() {
     '--card-opacity': 1,
     '--rotate-x': `${rotation.x}deg`,
     '--rotate-y': `${rotation.y}deg`,
+    '--background-x': `${background.x}%`,
+    '--background-y': `${background.y}%`,
   };
-  //   --background-x: ${$springBackground.x}%;
-  //   --background-y: ${$springBackground.y}%;
+
   //   --card-scale: ${$springScale};
   //   --translate-x: ${$springTranslate.x}px;
   //   --translate-y: ${$springTranslate.y}px;

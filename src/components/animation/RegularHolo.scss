@@ -1,6 +1,6 @@
 @import 'src/assets/scss/global.scss';
 
-.line__wrapper {
+.regularHolo__wrapper {
   width: 100%;
   height: 100%;
   position: relative;
@@ -9,7 +9,7 @@
   overflow: 'hidden';
 }
 
-.line {
+.regularHolo {
   display: grid;
   border-radius: 20px;
 
@@ -24,7 +24,7 @@
 
   clip-path: $--clip;
 
-  background-image: repeating-linear-gradient(
+  background-image: repeating-regularHoloar-gradient(
       110deg,
       $--violet,
       $--blue,
@@ -42,7 +42,7 @@
       $--yellow,
       $--red
     ),
-    repeating-linear-gradient(
+    repeating-regularHoloar-gradient(
       90deg,
       $--scanlines-dark calc($--scanlines-space * 0),
       $--scanlines-dark calc($--scanlines-space * 2),
@@ -58,4 +58,37 @@
   background-blend-mode: overlay;
   filter: brightness(1.1) contrast(1.1) saturate(1.2);
   mix-blend-mode: color-dodge;
+
+  &::before {
+    content: '';
+
+    background-image: repeating-linear-gradient(
+        90deg,
+        $--bar-bg calc($--bars * 2),
+        $--bar-color calc($--bars * 3),
+        $--bar-bg calc($--bars * 3.5),
+        $--bar-color calc($--bars * 4),
+        $--bar-bg calc($--bars * 5),
+        $--bar-bg calc($--bars * 14)
+      ),
+      repeating-linear-gradient(
+        90deg,
+        $--bar-bg calc($--bars * 2),
+        $--bar-color calc($--bars * 3),
+        $--bar-bg calc($--bars * 3.5),
+        $--bar-color calc($--bars * 4),
+        $--bar-bg calc($--bars * 5),
+        $--bar-bg calc($--bars * 10)
+      );
+
+    background-position: calc((((50% - var(--background-x)) * 1.65) + 50%) + (var(--background-y) * 0.5))
+        var(--background-x),
+      calc((((50% - var(--background-x)) * -0.9) + 50%) - (var(--background-y) * 0.75)) var(--background-y);
+
+    background-size: 200% 200%, 200% 200%;
+
+    background-blend-mode: screen;
+    filter: brightness(1.15) contrast(1.1);
+    mix-blend-mode: hard-light;
+  }
 }
