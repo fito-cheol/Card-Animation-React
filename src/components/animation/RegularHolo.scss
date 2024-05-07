@@ -9,7 +9,7 @@
   overflow: 'hidden';
 }
 
-.regularHolo {
+.rainbow {
   display: grid;
   border-radius: 20px;
 
@@ -59,7 +59,7 @@
   filter: brightness(1.1) contrast(1.1) saturate(1.2);
   mix-blend-mode: color-dodge;
 
-  &::before {
+  &--mask {
     content: '';
 
     background-image: repeating-linear-gradient(
@@ -91,7 +91,8 @@
     filter: brightness(1.15) contrast(1.1);
     mix-blend-mode: hard-light;
   }
-  &::after {
+
+  &--shine {
     content: '';
 
     background-image: radial-gradient(
