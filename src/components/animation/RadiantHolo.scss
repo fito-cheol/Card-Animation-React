@@ -9,7 +9,7 @@
   overflow: 'hidden';
 }
 
-.radiantHolo {
+.radiant {
   display: grid;
   border-radius: 20px;
 
@@ -87,7 +87,7 @@
   filter: brightness(.5) contrast(2) saturate(1.75);
   mix-blend-mode: color-dodge;
 
-  &::after {
+  &--holo {
     content: "";
 
     background-image: 
