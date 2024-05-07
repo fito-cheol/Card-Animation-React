@@ -1,16 +1,23 @@
-$--pointer-x: 25% !important;
-$--pointer-y: 10% !important;
-$--card-scale: 1.1 !important;
-$--card-opacity: 1 !important;
-$--translate-x: 0px !important;
-$--translate-y: -10px !important;
-$--rotate-x: 7deg !important;
-$--rotate-y: -19deg !important;
-$--background-x: 44% !important;
-$--background-y: 36% !important;
-$--pointer-from-center: 0.9 !important;
-$--pointer-from-top: 0.11 !important;
-$--pointer-from-left: 0.25 !important;
+
+$--card-aspect: 0.718;
+$--card-radius: 4.55% / 3.5%;
+$--card-edge: hsl(47, 100%, 78%);
+$--card-back: hsl(205, 100%, 25%);
+$--card-glow: hsl(175, 100%, 90%);
+
+$--sunpillar-1: hsl(2, 100%, 73%);
+$--sunpillar-2: hsl(53, 100%, 69%);
+$--sunpillar-3: hsl(93, 100%, 69%);
+$--sunpillar-4: hsl(176, 100%, 76%);
+$--sunpillar-5: hsl(228, 100%, 74%);
+$--sunpillar-6: hsl(283, 100%, 73%);
+
+$--sunpillar-clr-1: $--sunpillar-1;
+$--sunpillar-clr-2: $--sunpillar-2;
+$--sunpillar-clr-3: $--sunpillar-3;
+$--sunpillar-clr-4: $--sunpillar-4;
+$--sunpillar-clr-5: $--sunpillar-5;
+$--sunpillar-clr-6: $--sunpillar-6;
 
 $--red: #f80e35;
 $--yellow: #eedf10;
@@ -27,3 +34,10 @@ $--scanlines-dark: black;
 $--bars: 3%;
 $--bar-color: hsla(0, 0%, 70%, 1);
 $--bar-bg: hsla(0, 0%, 0%, 1);
+
+$--barwidth: 1.2%;
+$--space: 200px;
+$--hue: 50;
+$--imgsize: cover;
+
+$glitter: url('../../assets/img/glitter.png');
