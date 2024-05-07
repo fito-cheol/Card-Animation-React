@@ -13,7 +13,7 @@ export default function RegularHolo({ children, dynamicStylesProps, rainbow = tr
       onMouseLeave={handleMouseLeave}
       style={dynamicStylesValue as React.CSSProperties}
     >
-      {/* <div className={className} /> */}
+      
       {rainbow && <div className='rainbow' />}
       {mask && <div className='rainbow rainbow--mask' />}
       {shine && <div className='rainbow rainbow--shine' />}

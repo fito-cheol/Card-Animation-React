@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import RegularHolo from './RegularHolo';
 
@@ -27,7 +28,7 @@ const DefaultStyle = {
 export const 원본: Story = {
   render: args => (
     <RegularHolo {...args}>
-      <div style={DefaultStyle}></div>
+      <div style={DefaultStyle as React.CSSProperties}></div>
     </RegularHolo>
   ),
   args: {
@@ -40,7 +41,7 @@ export const 원본: Story = {
 export const Rainbow: Story = {
   render: args => (
     <RegularHolo {...args}>
-      <div style={DefaultStyle}></div>
+      <div style={DefaultStyle as React.CSSProperties}></div>
     </RegularHolo>
   ),
   args: {
@@ -53,7 +54,7 @@ export const Rainbow: Story = {
 export const Mask: Story = {
   render: args => (
     <RegularHolo {...args}>
-      <div style={DefaultStyle}></div>
+      <div style={DefaultStyle as React.CSSProperties}></div>
     </RegularHolo>
   ),
   args: {
@@ -66,7 +67,7 @@ export const Mask: Story = {
 export const Shine: Story = {
   render: args => (
     <RegularHolo {...args}>
-      <div style={DefaultStyle}></div>
+      <div style={DefaultStyle as React.CSSProperties}></div>
     </RegularHolo>
   ),
   args: {
