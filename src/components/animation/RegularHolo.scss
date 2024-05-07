@@ -24,7 +24,7 @@
 
   clip-path: $--clip;
 
-  background-image: repeating-regularHoloar-gradient(
+  background-image: repeating-linear-gradient(
       110deg,
       $--violet,
       $--blue,
@@ -42,7 +42,7 @@
       $--yellow,
       $--red
     ),
-    repeating-regularHoloar-gradient(
+    repeating-linear-gradient(
       90deg,
       $--scanlines-dark calc($--scanlines-space * 0),
       $--scanlines-dark calc($--scanlines-space * 2),
@@ -90,5 +90,22 @@
     background-blend-mode: screen;
     filter: brightness(1.15) contrast(1.1);
     mix-blend-mode: hard-light;
+  }
+  &::after {
+    content: '';
+
+    background-image: radial-gradient(
+      farthest-corner circle at var(--pointer-x) var(--pointer-y),
+      hsla(0, 0%, 90%, 0.8) 0%,
+      hsla(0, 0%, 78%, 0.1) 25%,
+      hsl(0, 0%, 0%) 90%
+    );
+
+    background-position: center center;
+
+    background-size: cover;
+
+    mix-blend-mode: luminosity;
+    filter: brightness(0.6) contrast(4);
   }
 }
