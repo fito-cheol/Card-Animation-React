@@ -1,7 +1,7 @@
 import { Button, Card, CardActions, CardContent, CardHeader, CardMedia, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import './PlayerCard.scss';
-import Glow from '../animation/Glow';
+import Shine from '../animation/Shine';
 import React from 'react';
 import Rotator from '../animation/Rotator';
 import useMouse from '../../hooks/useMouse';
@@ -19,7 +19,7 @@ export default function PlayerCard({ player }: Props) {
   return (
     <div className='container' onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <Rotator rotationProps={rotation}>
-        <Glow dynamicStylesProps={dynamicStyles}>
+        <Shine dynamicStylesProps={dynamicStyles}>
           <Holo dynamicStylesProps={dynamicStyles}>
             <Card
               sx={{
@@ -51,7 +51,7 @@ export default function PlayerCard({ player }: Props) {
               </CardActions>
             </Card>
           </Holo>
-        </Glow>
+        </Shine>
       </Rotator>
     </div>
   );

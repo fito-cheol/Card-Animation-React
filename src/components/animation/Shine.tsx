@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import './Glow.scss';
+import './Shine.scss';
 import useMouse from '../../hooks/useMouse';
 
-export default function Glow({ children, dynamicStylesProps }: any) {
+export default function Shine({ children, dynamicStylesProps }: any) {
   const { handleMouseMove, handleMouseLeave, dynamicStyles } = useMouse();
   let dynamicStylesValue = dynamicStylesProps || dynamicStyles;
 
   return (
     <div
-      className='glow__wrapper'
+      className='shine__wrapper'
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={dynamicStylesValue as React.CSSProperties}
     >
-      <div className='glow' />
+      <div className='shine' />
       {children}
     </div>
   );
