@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Line from './Line';
+import RadiantHolo from './RadiantHolo';
 
 const meta = {
-  title: 'Card/Line',
-  component: Line,
+  title: 'Card/RadiantHolo',
+  component: RadiantHolo,
   decorators: [
     Story => (
       <Story>
@@ -26,14 +26,14 @@ const meta = {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
   },
-} satisfies Meta<typeof Line>;
+} satisfies Meta<typeof RadiantHolo>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const 카드: Story = {
   render: args => (
-    <Line>
+    <RadiantHolo>
       <div
         style={{
           width: '320px',
@@ -46,6 +46,6 @@ export const 카드: Story = {
           position: 'relative',
         }}
       ></div>
-    </Line>
+    </RadiantHolo>
   ),
 };

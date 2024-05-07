@@ -1,6 +1,6 @@
 @import 'src/assets/scss/global.scss';
 
-.line__wrapper {
+.radiantHolo__wrapper {
   width: 100%;
   height: 100%;
   position: relative;
@@ -9,7 +9,7 @@
   overflow: 'hidden';
 }
 
-.line {
+.radiantHolo {
   display: grid;
   border-radius: 20px;
 
@@ -18,36 +18,40 @@
   position: absolute;
   z-index: 1;
 
+  --scanlines-space: 1px;
+  --scanlines-light: #666;
+  --scanlines-dark: black;
+
   --bars: 3%;
   --bar-color: hsla(0, 0%, 70%, 1);
   --bar-bg: hsla(0, 0%, 0%, 1);
 
-  clip-path: $--clip;
+  clip-path: var(--clip);
 
   background-image: repeating-linear-gradient(
       110deg,
-      $--violet,
-      $--blue,
-      $--green,
-      $--yellow,
-      $--red,
-      $--violet,
-      $--blue,
-      $--green,
-      $--yellow,
-      $--red,
-      $--violet,
-      $--blue,
-      $--green,
-      $--yellow,
-      $--red
+      var(--violet),
+      var(--blue),
+      var(--green),
+      var(--yellow),
+      var(--red),
+      var(--violet),
+      var(--blue),
+      var(--green),
+      var(--yellow),
+      var(--red),
+      var(--violet),
+      var(--blue),
+      var(--green),
+      var(--yellow),
+      var(--red)
     ),
     repeating-linear-gradient(
       90deg,
-      $--scanlines-dark calc($--scanlines-space * 0),
-      $--scanlines-dark calc($--scanlines-space * 2),
-      $--scanlines-light calc($--scanlines-space * 2),
-      $--scanlines-light calc($--scanlines-space * 4)
+      var(--scanlines-dark) calc(var(--scanlines-space) * 0),
+      var(--scanlines-dark) calc(var(--scanlines-space) * 2),
+      var(--scanlines-light) calc(var(--scanlines-space) * 2),
+      var(--scanlines-light) calc(var(--scanlines-space) * 4)
     );
 
   background-position: calc(((50% - var(--background-x)) * 2.6) + 50%) calc(((50% - var(--background-y)) * 3.5) + 50%),

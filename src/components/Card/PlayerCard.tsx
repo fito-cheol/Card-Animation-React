@@ -4,7 +4,6 @@ import './PlayerCard.scss';
 import Glow from '../animation/Glow';
 import React from 'react';
 import Rotator from '../animation/Rotator';
-import Line from '../animation/Line';
 import useMouse from '../../hooks/useMouse';
 import Holo from '../effect/Holo';
 
@@ -22,37 +21,35 @@ export default function PlayerCard({ player }: Props) {
       <Rotator rotationProps={rotation}>
         <Glow dynamicStylesProps={dynamicStyles}>
           <Holo dynamicStylesProps={dynamicStyles}>
-            <Line rotationProps={position}>
-              <Card
-                sx={{
-                  width: 250,
-                  height: 400,
-                  backgroundImage: `url("${player?.picture}")`,
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                }}
-              >
-                <CardContent>
-                  <Grid container>
-                    <Grid xs={3}>
-                      <Typography variant='subtitle2' color='text.secondary'>
-                        이름
-                      </Typography>
-                    </Grid>
-                    <Grid xs={9}>
-                      <Typography variant='body2' color='text.secondary'>
-                        {player?.nickName || '김축구'}
-                      </Typography>
-                    </Grid>
+            <Card
+              sx={{
+                width: 250,
+                height: 400,
+                backgroundImage: `url("${player?.picture}")`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+              }}
+            >
+              <CardContent>
+                <Grid container>
+                  <Grid xs={3}>
+                    <Typography variant='subtitle2' color='text.secondary'>
+                      이름
+                    </Typography>
                   </Grid>
-                </CardContent>
-                <CardActions>
-                  <Button size='small' variant='contained' color='primary'>
-                    수정
-                  </Button>
-                </CardActions>
-              </Card>
-            </Line>
+                  <Grid xs={9}>
+                    <Typography variant='body2' color='text.secondary'>
+                      {player?.nickName || '김축구'}
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </CardContent>
+              <CardActions>
+                <Button size='small' variant='contained' color='primary'>
+                  수정
+                </Button>
+              </CardActions>
+            </Card>
           </Holo>
         </Glow>
       </Rotator>
