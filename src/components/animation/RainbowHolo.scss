@@ -19,7 +19,7 @@
   z-index: 1;
 
   // mask 없을 때 기본으로 설정되어있는 mask
-  $foil: url('../../assets/img/illusion-mask.png');
+  $foil: url('../../assets/img/metal.png');
   $--imgsize: 33%;
 
   background-image: linear-gradient(-45deg, $--r-clr-1, $--r-clr-5), $glitter,
