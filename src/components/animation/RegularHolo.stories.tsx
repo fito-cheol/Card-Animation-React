@@ -32,20 +32,20 @@ export const 원본: Story = {
     </RegularHolo>
   ),
   args: {
-    regular: true,
+    rainbow: true,
     mask: true,
     shine: true,
   },
 };
 
-export const Regular: Story = {
+export const Rainbow: Story = {
   render: args => (
     <RegularHolo {...args}>
       <div style={DefaultStyle as React.CSSProperties}></div>
     </RegularHolo>
   ),
   args: {
-    regular: true,
+    rainbow: true,
     mask: false,
     shine: false,
   },
@@ -58,7 +58,7 @@ export const Mask: Story = {
     </RegularHolo>
   ),
   args: {
-    regular: false,
+    rainbow: false,
     mask: true,
     shine: false,
   },
@@ -71,7 +71,7 @@ export const Shine: Story = {
     </RegularHolo>
   ),
   args: {
-    regular: false,
+    rainbow: false,
     mask: false,
     shine: true,
   },
