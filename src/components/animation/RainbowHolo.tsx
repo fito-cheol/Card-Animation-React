@@ -19,9 +19,9 @@ export default function RainbowHolo({
       onMouseLeave={handleMouseLeave}
       style={dynamicStylesValue as React.CSSProperties}
     >
-      {rainbow && <div className='rainbow' />}
-      {glitter && <div className='rainbow rainbow--glitter' />}
-      {holo && <div className='rainbow rainbow--holo' />}
+      {rainbow && <div className='rainbowGrad' />}
+      {glitter && <div className='rainbowGrad rainbowGrad--glitter' />}
+      {holo && <div className='rainbowGrad rainbowGrad--holo' />}
       {children}
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './RegularHolo.scss';
 import useMouse from '@/hooks/useMouse';
 
-export default function RegularHolo({ children, dynamicStylesProps, regular = true, mask = true, shine = true }: any) {
+export default function RegularHolo({ children, dynamicStylesProps, rainbow = true, mask = true, shine = true }: any) {
   const { handleMouseMove, handleMouseLeave, dynamicStyles } = useMouse();
   let dynamicStylesValue = dynamicStylesProps || dynamicStyles;
 
@@ -13,9 +13,9 @@ export default function RegularHolo({ children, dynamicStylesProps, regular = tr
       onMouseLeave={handleMouseLeave}
       style={dynamicStylesValue as React.CSSProperties}
     >
-      {regular && <div className='regular' />}
-      {mask && <div className='regular regular--mask' />}
-      {shine && <div className='regular regular--shine' />}
+      {rainbow && <div className='rainbowBar' />}
+      {mask && <div className='rainbowBar rainbowBar--mask' />}
+      {shine && <div className='rainbowBar rainbowBar--shine' />}
       {children}
     </div>
   );
