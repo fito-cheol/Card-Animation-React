@@ -1,6 +1,6 @@
 @import 'src/assets/scss/global.scss';
 
-.rainbowHolo__wrapper {
+.rainbowAlt__wrapper {
   width: 100%;
   height: 100%;
   position: relative;
@@ -9,7 +9,7 @@
   overflow: 'hidden';
 }
 
-.rainbowGrad {
+.rainbowAlt {
   display: grid;
   border-radius: 20px;
 
@@ -18,11 +18,17 @@
   position: absolute;
   z-index: 1;
 
-  // mask 없을 때 기본으로 설정되어있는 mask
-  $foil: url('../../assets/img/metal.png');
-  $--imgsize: 33%;
-
-  background-image: linear-gradient(-45deg, $--r-clr-1, $--r-clr-5), $glitter,
+  background-image: repeating-linear-gradient(
+      $--angle,
+      hsla(283, 49%, 60%, 0.75) calc($--space * 1),
+      hsla(2, 70%, 58%, 0.75) calc($--space * 2),
+      hsla(53, 67%, 53%, 0.75) calc($--space * 3),
+      hsla(93, 56%, 52%, 0.75) calc($--space * 4),
+      hsla(176, 38%, 50%, 0.75) calc($--space * 5),
+      hsla(228, 100%, 77%, 0.75) calc($--space * 6),
+      hsla(283, 49%, 61%, 0.75) calc($--space * 7)
+    ),
+    $glitter,
     linear-gradient(
       -30deg,
       $--r-clr-1,
@@ -49,19 +55,14 @@
       $--r-clr-1
     );
 
-  background-blend-mode: luminosity, soft-light;
-
-  background-size: 200% 200%, $--glittersize $--glittersize, 400% 400%;
-
-  // --clip 이랑 같은 효과
-  // background-position: calc(25% + (50% * var(--pointer-from-left))) calc(25% + (50% * var(--pointer-from-top))),
-  //   center center, calc(25% + (var(--pointer-x) / 2)) calc(25% + (var(--pointer-y) / 2));
-
-  filter: brightness(calc((var(--pointer-from-center) * 0.25) + 0.6)) contrast(2.2) saturate(0.75);
+  background-size: 200% 400%, var(--glittersize) var(--glittersize), 400% 400%;
+  background-position: 0% calc(var(--background-y) * 1), center center,
+    calc(var(--background-x) * 1.5) calc(var(--background-y) * 1.5);
+  background-blend-mode: luminosity, overlay;
+  filter: brightness(calc((var(--pointer-from-center) * 0.3) + 0.3)) contrast(3) saturate(1.8);
 
   &--glitter {
     content: '';
-
     -webkit-mask-image: none !important;
     mask-image: none !important;
 
@@ -91,25 +92,12 @@
         $--r-clr-7,
         $--r-clr-1
       );
-
-    background-blend-mode: soft-light;
+    background-blend-mode: overlay;
     background-size: $--glittersize $--glittersize, 400% 400%;
-    background-position: center center, var(--pointer-x) var(--pointer-y);
-
-    filter: brightness(calc((var(--pointer-from-center) * 0.3) + 0.55)) contrast(2) saturate(1);
+    background-position: center center, calc(var(--background-x) * -1.5) calc(var(--background-y) * -1.5);
+    filter: brightness(calc((var(--pointer-from-center) * 0.5) + 0.6)) contrast(3) saturate(1);
     mix-blend-mode: color-dodge;
-  }
 
-  &--holo {
-    content: '';
-
-    background-image: $foil;
-    background-size: $--imgsize;
-    background-position: center center;
-    filter: brightness(2.5) contrast(1);
-
-    opacity: calc((var(--pointer-from-center) + 0.4) * 0.6);
-    background-blend-mode: difference;
-    mix-blend-mode: darken;
+    opacity: calc(1.2 + (var(--pointer-from-center) / 2) * -1);
   }
 }
