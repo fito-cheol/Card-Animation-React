@@ -44,12 +44,14 @@ export default function useMouse() {
     '--pointer-x': `${positionPercent.x}%`,
     '--pointer-y': `${positionPercent.y}%`,
     '--pointer-from-center': clamp(
-      Math.sqrt((position.y - 50) * (position.y - 50) + (position.x - 50) * (position.x - 50)) / 50,
+      Math.sqrt(
+        (positionPercent.y - 50) * (positionPercent.y - 50) + (positionPercent.x - 50) * (positionPercent.x - 50),
+      ) / 50,
       0,
       1,
     ),
-    '--pointer-from-top': position.y / 1000,
-    '--pointer-from-left': position.x / 1000,
+    '--pointer-from-top': positionPercent.y / 100,
+    '--pointer-from-left': positionPercent.x / 100,
     '--card-opacity': 1,
     '--rotate-x': `${rotation.x}deg`,
     '--rotate-y': `${rotation.y}deg`,
