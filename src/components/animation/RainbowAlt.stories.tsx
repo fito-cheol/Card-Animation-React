@@ -34,29 +34,45 @@ export const 카드: Story = {
   args: {
     rainbow: true,
     holo: true,
+    foil: true,
   },
 };
 
-export const Rainbow: Story = {
-  render: args => (
-    <RainbowAlt {...args}>
-      <div style={DefaultStyle as React.CSSProperties}></div>
-    </RainbowAlt>
-  ),
-  args: {
-    rainbow: true,
-    glitter: false,
-  },
-};
+// export const Rainbow: Story = {
+//   render: args => (
+//     <RainbowAlt {...args}>
+//       <div style={DefaultStyle as React.CSSProperties}></div>
+//     </RainbowAlt>
+//   ),
+//   args: {
+//     rainbow: true,
+//     glitter: false,
+//     foil: false,
+//   },
+// };
 
-export const Glitter: Story = {
-  render: args => (
-    <RainbowAlt {...args}>
-      <div style={DefaultStyle as React.CSSProperties}></div>
-    </RainbowAlt>
-  ),
-  args: {
-    rainbow: false,
-    glitter: true,
-  },
-};
+// export const Glitter: Story = {
+//   render: args => (
+//     <RainbowAlt {...args}>
+//       <div style={DefaultStyle as React.CSSProperties}></div>
+//     </RainbowAlt>
+//   ),
+//   args: {
+//     rainbow: false,
+//     glitter: true,
+//     foil: false,
+//   },
+// };
+
+// export const Foil: Story = {
+//   render: args => (
+//     <RainbowAlt {...args}>
+//       <div style={DefaultStyle as React.CSSProperties}></div>
+//     </RainbowAlt>
+//   ),
+//   args: {
+//     rainbow: false,
+//     glitter: false,
+//     foil: true,
+//   },
+// };

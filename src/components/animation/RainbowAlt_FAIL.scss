@@ -20,7 +20,6 @@
 
   $foil: url(https://poke-holo.b-cdn.net/foils/swsh7/foils/upscaled/215_foil_etched_swsecret_2x.webp);
   $mask: url(https://poke-holo.b-cdn.net/foils/swsh7/masks/upscaled/215_foil_etched_swsecret_2x.webp);
-
   background-image: repeating-linear-gradient(
       $--angle,
       hsla(283, 49%, 60%, 0.75) calc($--space * 1),
@@ -64,22 +63,7 @@
   background-blend-mode: luminosity, overlay;
   filter: brightness(calc((var(--pointer-from-center) * 0.3) + 0.3)) contrast(3) saturate(1.8);
 
-  -webkit-mask-image: $mask;
-  mask-image: $mask;
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  -webkit-mask-position: center center;
-  mask-position: center center;
-
-  &::after {
-    display: grid;
-    border-radius: 20px;
-
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-
+  &--glitter {
     content: '';
     -webkit-mask-image: none !important;
     mask-image: none !important;
@@ -119,15 +103,7 @@
     opacity: calc(1.2 + (var(--pointer-from-center) / 2) * -1);
   }
 
-  &::before {
-    display: grid;
-    border-radius: 20px;
-
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-
+  &--foil {
     content: '';
 
     background-image: $foil;
@@ -139,4 +115,10 @@
     background-blend-mode: difference;
     mix-blend-mode: color-dodge;
   }
+  -webkit-mask-image: $mask;
+  mask-image: $mask;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center center;
+  mask-position: center center;
 }

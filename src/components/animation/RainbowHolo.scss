@@ -112,4 +112,10 @@
     background-blend-mode: difference;
     mix-blend-mode: darken;
   }
+  -webkit-mask-image: $foil;
+  mask-image: $foil;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center center;
+  mask-position: center center;
 }
