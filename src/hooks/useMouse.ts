@@ -37,7 +37,7 @@ export default function useMouse() {
     setPosition({ x: 0, y: 0 });
     setPositionFromCenter({ x: 0, y: 0 });
     setRotation({ x: 0, y: 0 });
-    setPositionPercent({ x: 25, y: 10 });
+    setPositionPercent({ x: 50, y: 50 });
     setBackground({ x: 50, y: 50 });
   };
   const dynamicStyles = {
