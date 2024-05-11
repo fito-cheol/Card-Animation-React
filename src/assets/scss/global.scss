@@ -50,3 +50,21 @@ $--imgsize: cover;
 
 $glitter: url('../../assets/img/glitter.png');
 $--glittersize: 25%;
+
+@mixin fitToParent {
+  display: grid;
+  border-radius: 20px;
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+@mixin masking($mask) {
+  -webkit-mask-image: $mask;
+  mask-image: $mask;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center center;
+  mask-position: center center;
+}
