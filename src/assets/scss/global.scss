@@ -55,6 +55,15 @@ $cosmos-bottom: url('../../assets/img/cosmos-bottom.png');
 $cosmos-middle-trans: url('../../assets/img/cosmos-middle-trans.png');
 $cosmos-top-trans: url('../../assets/img/cosmos-top-trans.png');
 
+@mixin wrapChild {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: 'flex';
+  flex-wrap: 'wrap';
+  overflow: 'hidden';
+}
+
 @mixin fitToParent {
   display: grid;
   border-radius: 20px;
