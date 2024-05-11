@@ -28,6 +28,7 @@ export default function PlayerCard({ player }: Props) {
                 backgroundImage: `url("${player?.picture}")`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
+                borderRadius: '20px',
               }}
             >
               <CardContent>

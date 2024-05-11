@@ -1,9 +1,9 @@
-import { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import { AxiosError, AxiosInstance, InternalAxiosRequestConfig, AxiosResponse } from 'axios';
 import { toast } from 'react-toastify';
 
-import store from 'redux/store';
-import { logOut } from 'redux/module/user';
-import { startProgress, completeProgress, setProgress } from 'redux/module/progress';
+import store from 'src/redux/store';
+import { logOut } from 'src/redux/module/user';
+import { startProgress, completeProgress, setProgress } from 'src/redux/module/progress';
 
 // https://dev.to/vikirobles/how-to-create-an-auth-login-system-with-axios-interceptors-typescript-2k11
 

@@ -1,5 +1,7 @@
+@use 'sass:math';
+
 $--card-aspect: 0.718;
-$--card-radius: 4.55% / 3.5%;
+$--card-radius: math.div(4.55%, 3.5%);
 $--card-edge: hsl(47, 100%, 78%);
 $--card-back: hsl(205, 100%, 25%);
 $--card-glow: hsl(175, 100%, 90%);

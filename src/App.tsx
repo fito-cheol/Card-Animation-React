@@ -4,7 +4,6 @@ import './App.scoped.scss';
 import PlayerCard from './components/Card/PlayerCard';
 
 function App() {
-
   return (
     <div className='container'>
       <PlayerCard
