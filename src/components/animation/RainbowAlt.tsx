@@ -13,9 +13,9 @@ export default function RainbowAlt({ children, styleVarProps, rainbow = true, gl
       onMouseLeave={handleMouseLeave}
       style={styleVarValue as React.CSSProperties}
     >
-      {rainbow && <div className='rainbowAlt' />}
-      {/* {glitter && <div className='rainbowAlt rainbowAlt--glitter' />}
-      {foil && <div className='rainbowAlt rainbowAlt--foil' />} */}
+      {rainbow && <div className='rainbowAlt rainbowAlt--shine' />}
+      {glitter && <div className='rainbowAlt rainbowAlt--glitter' />}
+      {foil && <div className='rainbowAlt rainbowAlt--foil' />}
       {children}
     </div>
   );

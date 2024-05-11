@@ -13,7 +13,7 @@ export default function RadiantHolo({ children, styleVarProps, radiant = true, h
       onMouseLeave={handleMouseLeave}
       style={styleVarValue as React.CSSProperties}
     >
-      {radiant && <div className='radiant' />}
+      {radiant && <div className='radiant radiant--shine' />}
       {holo && <div className='radiant radiant--holo' />}
       {children}
     </div>

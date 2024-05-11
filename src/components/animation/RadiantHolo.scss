@@ -9,69 +9,71 @@
 
   $foil: url('https://poke-holo.b-cdn.net/foils/pgo/foils/upscaled/011_foil_etched_radiantholo_2x.webp');
 
-  background-image: radial-gradient(
-      farthest-corner ellipse at calc(((var(--pointer-x)) * 0.5) + 25%) calc(((var(--pointer-y)) * 0.5) + 25%),
-      hsl(0, 0%, 95%) 20%,
-      $--card-glow 130%
-    ),
-    repeating-linear-gradient(
-      45deg,
-      hsl(0, 0%, 10%) 0%,
-      hsl(0, 0%, 10%) 1%,
-      hsl(0, 0%, 10%) $--barwidth,
-      hsl(0, 0%, 20%) calc($--barwidth + 0.01%),
-      hsl(0, 0%, 20%) calc($--barwidth * 2),
-      hsl(0, 0%, 35%) calc($--barwidth * 2 + 0.01%),
-      hsl(0, 0%, 35%) calc($--barwidth * 3),
-      hsl(0, 0%, 42.5%) calc($--barwidth * 3 + 0.01%),
-      hsl(0, 0%, 42.5%) calc($--barwidth * 4),
-      hsl(0, 0%, 50%) calc($--barwidth * 4 + 0.01%),
-      hsl(0, 0%, 50%) calc($--barwidth * 5),
-      hsl(0, 0%, 42.5%) calc($--barwidth * 5 + 0.01%),
-      hsl(0, 0%, 42.5%) calc($--barwidth * 6),
-      hsl(0, 0%, 35%) calc($--barwidth * 6 + 0.01%),
-      hsl(0, 0%, 35%) calc($--barwidth * 7),
-      hsl(0, 0%, 20%) calc($--barwidth * 7 + 0.01%),
-      hsl(0, 0%, 20%) calc($--barwidth * 8),
-      hsl(0, 0%, 10%) calc($--barwidth * 8 + 0.01%),
-      hsl(0, 0%, 10%) calc($--barwidth * 9),
-      hsl(0, 0%, 0%) calc($--barwidth * 9 + 0.01%),
-      hsl(0, 0%, 0%) calc($--barwidth * 10)
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      hsl(0, 0%, 10%) 0%,
-      hsl(0, 0%, 10%) 1%,
-      hsl(0, 0%, 10%) $--barwidth,
-      hsl(0, 0%, 20%) calc($--barwidth + 0.01%),
-      hsl(0, 0%, 20%) calc($--barwidth * 2),
-      hsl(0, 0%, 35%) calc($--barwidth * 2 + 0.01%),
-      hsl(0, 0%, 35%) calc($--barwidth * 3),
-      hsl(0, 0%, 42.5%) calc($--barwidth * 3 + 0.01%),
-      hsl(0, 0%, 42.5%) calc($--barwidth * 4),
-      hsl(0, 0%, 50%) calc($--barwidth * 4 + 0.01%),
-      hsl(0, 0%, 50%) calc($--barwidth * 5),
-      hsl(0, 0%, 42.5%) calc($--barwidth * 5 + 0.01%),
-      hsl(0, 0%, 42.5%) calc($--barwidth * 6),
-      hsl(0, 0%, 35%) calc($--barwidth * 6 + 0.01%),
-      hsl(0, 0%, 35%) calc($--barwidth * 7),
-      hsl(0, 0%, 20%) calc($--barwidth * 7 + 0.01%),
-      hsl(0, 0%, 20%) calc($--barwidth * 8),
-      hsl(0, 0%, 10%) calc($--barwidth * 8 + 0.01%),
-      hsl(0, 0%, 10%) calc($--barwidth * 9),
-      hsl(0, 0%, 0%) calc($--barwidth * 9 + 0.01%),
-      hsl(0, 0%, 0%) calc($--barwidth * 10)
-    );
+  &--shine {
+    background-image: radial-gradient(
+        farthest-corner ellipse at calc(((var(--pointer-x)) * 0.5) + 25%) calc(((var(--pointer-y)) * 0.5) + 25%),
+        hsl(0, 0%, 95%) 20%,
+        $--card-glow 130%
+      ),
+      repeating-linear-gradient(
+        45deg,
+        hsl(0, 0%, 10%) 0%,
+        hsl(0, 0%, 10%) 1%,
+        hsl(0, 0%, 10%) $--barwidth,
+        hsl(0, 0%, 20%) calc($--barwidth + 0.01%),
+        hsl(0, 0%, 20%) calc($--barwidth * 2),
+        hsl(0, 0%, 35%) calc($--barwidth * 2 + 0.01%),
+        hsl(0, 0%, 35%) calc($--barwidth * 3),
+        hsl(0, 0%, 42.5%) calc($--barwidth * 3 + 0.01%),
+        hsl(0, 0%, 42.5%) calc($--barwidth * 4),
+        hsl(0, 0%, 50%) calc($--barwidth * 4 + 0.01%),
+        hsl(0, 0%, 50%) calc($--barwidth * 5),
+        hsl(0, 0%, 42.5%) calc($--barwidth * 5 + 0.01%),
+        hsl(0, 0%, 42.5%) calc($--barwidth * 6),
+        hsl(0, 0%, 35%) calc($--barwidth * 6 + 0.01%),
+        hsl(0, 0%, 35%) calc($--barwidth * 7),
+        hsl(0, 0%, 20%) calc($--barwidth * 7 + 0.01%),
+        hsl(0, 0%, 20%) calc($--barwidth * 8),
+        hsl(0, 0%, 10%) calc($--barwidth * 8 + 0.01%),
+        hsl(0, 0%, 10%) calc($--barwidth * 9),
+        hsl(0, 0%, 0%) calc($--barwidth * 9 + 0.01%),
+        hsl(0, 0%, 0%) calc($--barwidth * 10)
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        hsl(0, 0%, 10%) 0%,
+        hsl(0, 0%, 10%) 1%,
+        hsl(0, 0%, 10%) $--barwidth,
+        hsl(0, 0%, 20%) calc($--barwidth + 0.01%),
+        hsl(0, 0%, 20%) calc($--barwidth * 2),
+        hsl(0, 0%, 35%) calc($--barwidth * 2 + 0.01%),
+        hsl(0, 0%, 35%) calc($--barwidth * 3),
+        hsl(0, 0%, 42.5%) calc($--barwidth * 3 + 0.01%),
+        hsl(0, 0%, 42.5%) calc($--barwidth * 4),
+        hsl(0, 0%, 50%) calc($--barwidth * 4 + 0.01%),
+        hsl(0, 0%, 50%) calc($--barwidth * 5),
+        hsl(0, 0%, 42.5%) calc($--barwidth * 5 + 0.01%),
+        hsl(0, 0%, 42.5%) calc($--barwidth * 6),
+        hsl(0, 0%, 35%) calc($--barwidth * 6 + 0.01%),
+        hsl(0, 0%, 35%) calc($--barwidth * 7),
+        hsl(0, 0%, 20%) calc($--barwidth * 7 + 0.01%),
+        hsl(0, 0%, 20%) calc($--barwidth * 8),
+        hsl(0, 0%, 10%) calc($--barwidth * 8 + 0.01%),
+        hsl(0, 0%, 10%) calc($--barwidth * 9),
+        hsl(0, 0%, 0%) calc($--barwidth * 9 + 0.01%),
+        hsl(0, 0%, 0%) calc($--barwidth * 10)
+      );
 
-  background-size: cover, 210% 210%, 210% 210%;
-  background-position: center,
-    calc(((var(--background-x) - 50%) * 1.5) + 50%) calc(((var(--background-y) - 50%) * 1.5) + 50%),
-    calc(((var(--background-x) - 50%) * 1.5) + 50%) calc(((var(--background-y) - 50%) * 1.5) + 50%);
+    background-size: cover, 210% 210%, 210% 210%;
+    background-position: center,
+      calc(((var(--background-x) - 50%) * 1.5) + 50%) calc(((var(--background-y) - 50%) * 1.5) + 50%),
+      calc(((var(--background-x) - 50%) * 1.5) + 50%) calc(((var(--background-y) - 50%) * 1.5) + 50%);
 
-  background-blend-mode: exclusion, darken, color-dodge;
+    background-blend-mode: exclusion, darken, color-dodge;
 
-  filter: brightness(0.5) contrast(2) saturate(1.75);
-  mix-blend-mode: color-dodge;
+    filter: brightness(0.5) contrast(2) saturate(1.75);
+    mix-blend-mode: color-dodge;
+  }
 
   &--holo {
     content: '';
