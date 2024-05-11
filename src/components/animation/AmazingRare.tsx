@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import './AmazingRare.scss';
 import useMouse from '@/hooks/useMouse';
 
-export default function AmazingRare({ children, dynamicStylesProps, shine = true, grad = true, holo = true }: any) {
-  const { handleMouseMove, handleMouseLeave, dynamicStyles } = useMouse();
-  let dynamicStylesValue = dynamicStylesProps || dynamicStyles;
+export default function AmazingRare({ children, styleVarProps, shine = true, grad = true, holo = true }: any) {
+  const { handleMouseMove, handleMouseLeave, styleVar } = useMouse();
+  let styleVarValue = styleVarProps || styleVar;
 
   return (
     <div
       className='amazingRare__wrapper'
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={dynamicStylesValue as React.CSSProperties}
+      style={styleVarValue as React.CSSProperties}
     >
       {shine && <div className='amazing amazing--shine' />}
       {grad && <div className='amazing amazing--grad' />}

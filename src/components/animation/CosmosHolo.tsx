@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import './Holo.scss';
+import './CosmosHolo.scss';
 import useMouse from '@/hooks/useMouse';
 
-export default function Holo({ children, rotationProps, positionProps, styleVarProps }: any) {
+export default function CosmosHolo({ children, styleVarProps, shine = true, grad = true, holo = true }: any) {
   const { handleMouseMove, handleMouseLeave, styleVar } = useMouse();
   let styleVarValue = styleVarProps || styleVar;
 
   return (
     <div
-      className='holo__wrapper'
+      className='cosmosHolo__wrapper'
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={styleVarValue as React.CSSProperties}
     >
-      <div className='holo' />
+      {shine && <div className='amazing amazing--shine' />}
+      {grad && <div className='amazing amazing--grad' />}
+      {holo && <div className='amazing amazing--holo' />}
       {children}
     </div>
   );

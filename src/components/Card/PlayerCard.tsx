@@ -14,13 +14,13 @@ interface Props {
 // https://kagrin97-blog.vercel.app/react/Dynamic3DParallax%20Effect
 
 export default function PlayerCard({ player }: Props) {
-  const { rotation, position, handleMouseMove, handleMouseLeave, dynamicStyles } = useMouse();
+  const { rotation, position, handleMouseMove, handleMouseLeave, styleVar } = useMouse();
 
   return (
     <div className='container' onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <Rotator rotationProps={rotation}>
-        <Shine dynamicStylesProps={dynamicStyles}>
-          <Holo dynamicStylesProps={dynamicStyles}>
+        <Shine styleVarProps={styleVar}>
+          <Holo styleVarProps={styleVar}>
             <Card
               sx={{
                 width: 250,

@@ -1,6 +1,22 @@
 import { adjust, clamp } from '../utils/Math';
 import { useState } from 'react';
 
+const randomSeed = {
+  x: Math.random(),
+  y: Math.random(),
+};
+
+const cosmosPosition = {
+  x: Math.floor(randomSeed.x * 734),
+  y: Math.floor(randomSeed.y * 1280),
+};
+
+const staticStyles = {
+  '--seedx': randomSeed.x,
+  '--seedy': randomSeed.y,
+  '--cosmosbg': `${cosmosPosition.x}px ${cosmosPosition.y}px`,
+};
+
 export default function useMouse() {
   const [position, setPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [positionFromCenter, setPositionFromCenter] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -40,7 +56,8 @@ export default function useMouse() {
     setPositionPercent({ x: 50, y: 50 });
     setBackground({ x: 50, y: 50 });
   };
-  const dynamicStyles = {
+  const styleVar = {
+    ...staticStyles,
     '--pointer-x': `${positionPercent.x}%`,
     '--pointer-y': `${positionPercent.y}%`,
     '--pointer-from-center': clamp(
@@ -64,5 +81,5 @@ export default function useMouse() {
   //   --translate-y: ${$springTranslate.y}px;
   // `
 
-  return { rotation, position, positionPercent, handleMouseMove, handleMouseLeave, dynamicStyles };
+  return { rotation, position, positionPercent, handleMouseMove, handleMouseLeave, styleVar };
 }

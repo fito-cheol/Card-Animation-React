@@ -1,0 +1,121 @@
+@import 'src/assets/scss/global.scss';
+
+.cosmosHolo__wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: 'flex';
+  flex-wrap: 'wrap';
+  overflow: 'hidden';
+}
+
+.cosmos {
+  @include fitToParent;
+  $mask: url(https://poke-holo.b-cdn.net/foils/swshp/masks/upscaled/012_foil_holo_cosmos_2x.webp);
+  $--foil: url(https://poke-holo.b-cdn.net/foils/swshp/foils/upscaled/012_foil_holo_cosmos_2x.webp);
+
+  @include masking($mask);
+
+  --space: 4%;
+
+  // clip-path: var(--clip);
+
+  &--shine {
+    background-image: $cosmos-bottom,
+      repeating-linear-gradient(
+        82deg,
+        hsl(53, 65%, 60%) calc($--space * 1),
+        hsl(93, 56%, 50%) calc($--space * 2),
+        hsl(176, 54%, 49%) calc($--space * 3),
+        hsl(228, 59%, 55%) calc($--space * 4),
+        hsl(283, 60%, 55%) calc($--space * 5),
+        hsl(326, 59%, 51%) calc($--space * 6),
+        hsl(326, 59%, 51%) calc($--space * 7),
+        hsl(283, 60%, 55%) calc($--space * 8),
+        hsl(228, 59%, 55%) calc($--space * 9),
+        hsl(176, 54%, 49%) calc($--space * 10),
+        hsl(93, 56%, 50%) calc($--space * 11),
+        hsl(53, 65%, 60%) calc($--space * 12)
+      ),
+      radial-gradient(
+        farthest-corner circle at var(--pointer-x) var(--pointer-y),
+        hsla(180, 100%, 89%, 0.5) 5%,
+        hsla(180, 14%, 57%, 0.3) 40%,
+        hsl(0, 0%, 0%) 130%
+      );
+
+    background-blend-mode: color-burn, multiply;
+
+    background-position: var(--cosmosbg, center center),
+      calc(10% + (var(--pointer-from-left) * 80%)) calc(10% + (var(--pointer-from-top) * 80%)), center center;
+
+    background-size: cover, 400% 900%, cover;
+
+    filter: brightness(1) contrast(1) saturate(0.8);
+    mix-blend-mode: color-dodge;
+  }
+
+  &--holo {
+    content: '';
+    z-index: 2;
+
+    background-image: $cosmos-middle-trans,
+      repeating-linear-gradient(
+        82deg,
+        hsl(53, 65%, 60%) calc($--space * 1),
+        hsl(93, 56%, 50%) calc($--space * 2),
+        hsl(176, 54%, 49%) calc($--space * 3),
+        hsl(228, 59%, 55%) calc($--space * 4),
+        hsl(283, 60%, 55%) calc($--space * 5),
+        hsl(326, 59%, 51%) calc($--space * 6),
+        hsl(326, 59%, 51%) calc($--space * 7),
+        hsl(283, 60%, 55%) calc($--space * 8),
+        hsl(228, 59%, 55%) calc($--space * 9),
+        hsl(176, 54%, 49%) calc($--space * 10),
+        hsl(93, 56%, 50%) calc($--space * 11),
+        hsl(53, 65%, 60%) calc($--space * 12)
+      );
+
+    background-blend-mode: lighten, multiply;
+
+    background-position: var(--cosmosbg, center center),
+      calc(15% + (var(--pointer-from-left) * 70%)) calc(15% + (var(--pointer-from-top) * 70%)), center center;
+
+    background-size: cover, 400% 900%, cover;
+
+    filter: brightness(1.25) contrast(1.75) saturate(0.8);
+    mix-blend-mode: overlay;
+  }
+
+  &--grad {
+    content: '';
+    z-index: 3;
+
+    background-image: $cosmos-top-trans,
+      repeating-linear-gradient(
+        82deg,
+        hsl(53, 65%, 60%) calc(var(--space) * 1),
+        hsl(93, 56%, 50%) calc(var(--space) * 2),
+        hsl(176, 54%, 49%) calc(var(--space) * 3),
+        hsl(228, 59%, 55%) calc(var(--space) * 4),
+        hsl(283, 60%, 55%) calc(var(--space) * 5),
+        hsl(326, 59%, 51%) calc(var(--space) * 6),
+        hsl(326, 59%, 51%) calc(var(--space) * 7),
+        hsl(283, 60%, 55%) calc(var(--space) * 8),
+        hsl(228, 59%, 55%) calc(var(--space) * 9),
+        hsl(176, 54%, 49%) calc(var(--space) * 10),
+        hsl(93, 56%, 50%) calc(var(--space) * 11),
+        hsl(53, 65%, 60%) calc(var(--space) * 12)
+      );
+
+    background-blend-mode: multiply, multiply;
+
+    background-position: var(--cosmosbg, center center),
+      calc(20% + (var(--pointer-from-left) * 60%)) calc(20% + (var(--pointer-from-top) * 60%)), center center;
+
+    background-size: cover, 400% 900%, cover;
+
+    filter: brightness(1.25) contrast(1.75) saturate(0.8);
+    mix-blend-mode: multiply;
+  }
+}

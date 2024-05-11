@@ -51,6 +51,10 @@ $--imgsize: cover;
 $glitter: url('../../assets/img/glitter.png');
 $--glittersize: 25%;
 
+$cosmos-bottom: url('../../assets/img/cosmos-bottom.png');
+$cosmos-middle-trans: url('../../assets/img/cosmos-middle-trans.png');
+$cosmos-top-trans: url('../../assets/img/cosmos-top-trans.png');
+
 @mixin fitToParent {
   display: grid;
   border-radius: 20px;
