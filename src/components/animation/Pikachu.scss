@@ -1,0 +1,119 @@
+@import 'src/assets/scss/global.scss';
+
+.pikachu__wrapper {
+  @include wrapChild;
+}
+
+.pikachu {
+  @include fitToParent;
+  $--foil: url(https://poke-holo.b-cdn.net/foils/swsh12pt5/foils/upscaled/160_foil_etched_swsecret_2x.webp);
+  $mask: url(https://poke-holo.b-cdn.net/foils/swsh12pt5/masks/upscaled/160_foil_etched_swsecret_2x.webp);
+
+  @include masking($mask);
+
+  $--space: 5%;
+  $--angle: 133deg;
+  $--imgsize: cover;
+
+  &--shine {
+    background-image: linear-gradient(-45deg, $--r-clr-1, $--r-clr-5), $glitter,
+      linear-gradient(
+        -30deg,
+        $--r-clr-1,
+        $--r-clr-2,
+        $--r-clr-3,
+        $--r-clr-4,
+        $--r-clr-5,
+        $--r-clr-6,
+        $--r-clr-7,
+        $--r-clr-1,
+        $--r-clr-2,
+        $--r-clr-3,
+        $--r-clr-4,
+        $--r-clr-5,
+        $--r-clr-6,
+        $--r-clr-7,
+        $--r-clr-1,
+        $--r-clr-2,
+        $--r-clr-3,
+        $--r-clr-4,
+        $--r-clr-5,
+        $--r-clr-6,
+        $--r-clr-7,
+        $--r-clr-1
+      );
+
+    background-blend-mode: luminosity, soft-light;
+
+    background-size:
+      200% 200%,
+      $--glittersize $--glittersize,
+      400% 400%;
+
+    background-position:
+      calc(25% + (50% * var(--pointer-from-left))) calc(25% + (50% * var(--pointer-from-top))),
+      calc(50% - (($--shift * 2) * var(--pointer-from-left)) + $--shift)
+        calc(50% - (($--shift * 2) * var(--pointer-from-top)) + $--shift),
+      calc(25% + (var(--pointer-x) / 2)) calc(25% + (var(--pointer-y) / 2));
+
+    filter: brightness(calc((var(--pointer-from-center) * 0.5) + 0.75)) contrast(2) saturate(1);
+  }
+
+  &--grad {
+    content: '';
+
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+
+    background-image: $glitter,
+      linear-gradient(
+        -60deg,
+        $--r-clr-1,
+        $--r-clr-2,
+        $--r-clr-3,
+        $--r-clr-4,
+        $--r-clr-5,
+        $--r-clr-6,
+        $--r-clr-7,
+        $--r-clr-1,
+        $--r-clr-2,
+        $--r-clr-3,
+        $--r-clr-4,
+        $--r-clr-5,
+        $--r-clr-6,
+        $--r-clr-7,
+        $--r-clr-1,
+        $--r-clr-2,
+        $--r-clr-3,
+        $--r-clr-4,
+        $--r-clr-5,
+        $--r-clr-6,
+        $--r-clr-7,
+        $--r-clr-1
+      );
+
+    background-blend-mode: soft-light;
+
+    background-size:
+      $--glittersize $--glittersize,
+      400% 400%;
+
+    background-position:
+      calc(50% - (($--shift * 2) * var(--pointer-from-left)) - $--shift)
+        calc(50% - (($--shift * 2) * var(--pointer-from-top)) - $--shift),
+      var(--pointer-x) var(--pointer-y);
+
+    filter: brightness(calc((var(--pointer-from-center) * 0.35) + 0.35)) contrast(2) saturate(1);
+    mix-blend-mode: exclusion;
+  }
+
+  &--holo {
+    background-image: $--foil;
+    background-size: $--imgsize;
+    background-position: center center;
+    filter: brightness(2.5) contrast(1);
+
+    opacity: calc((var(--pointer-from-center) + 0.4) * 0.6);
+    mix-blend-mode: multiply;
+  }
+}
