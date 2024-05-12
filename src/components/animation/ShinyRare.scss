@@ -1,0 +1,124 @@
+@import 'src/assets/scss/global.scss';
+
+.shinyRare__wrapper {
+  @include wrapChild;
+}
+
+.shiny {
+  @include fitToParent;
+  $--foil: url(https://poke-holo.b-cdn.net/foils/swsh45/foils/upscaled/sv110_foil_etched_sunpillar_2x.webp);
+  $mask: url(https://poke-holo.b-cdn.net/foils/swsh45/masks/upscaled/sv110_foil_etched_sunpillar_2x.webp);
+
+  @include masking($mask);
+
+  $--space: 5%;
+  $--angle: 133deg;
+  $--imgsize: cover;
+
+  &--grad {
+    background-image: $--foil,
+      repeating-linear-gradient(
+        0deg,
+        $--sunpillar-clr-1 calc($--space * 1),
+        $--sunpillar-clr-2 calc($--space * 2),
+        $--sunpillar-clr-3 calc($--space * 3),
+        $--sunpillar-clr-4 calc($--space * 4),
+        $--sunpillar-clr-5 calc($--space * 5),
+        $--sunpillar-clr-6 calc($--space * 6),
+        $--sunpillar-clr-1 calc($--space * 7)
+      ),
+      repeating-linear-gradient(
+        $--angle,
+        #0e152e 0%,
+        hsl(180, 10%, 60%) 3.8%,
+        hsl(180, 29%, 66%) 4.5%,
+        hsl(180, 10%, 60%) 5.2%,
+        #0e152e 10%,
+        #0e152e 12%
+      ),
+      radial-gradient(
+        farthest-corner circle at var(--pointer-x) var(--pointer-y),
+        hsla(0, 0%, 0%, 0.1) 12%,
+        hsla(0, 0%, 0%, 0.15) 20%,
+        hsla(0, 0%, 0%, 0.25) 120%
+      );
+
+    background-position:
+      center center,
+      0% var(--background-y),
+      calc(var(--background-x) + (var(--background-y) * 0.2)) var(--background-y),
+      var(--background-x) var(--background-y);
+
+    background-blend-mode: soft-light, hue, hard-light;
+    background-size:
+      $--imgsize,
+      200% 700%,
+      300% 100%,
+      200% 100%;
+
+    filter: brightness(calc((var(--pointer-from-center) * 0.4) + 0.4)) contrast(1.4) saturate(2.25);
+  }
+
+  &--holo {
+    content: '';
+    background-image: $--foil,
+      repeating-linear-gradient(
+        0deg,
+        $--sunpillar-clr-1 calc($--space * 1),
+        $--sunpillar-clr-2 calc($--space * 2),
+        $--sunpillar-clr-3 calc($--space * 3),
+        $--sunpillar-clr-4 calc($--space * 4),
+        $--sunpillar-clr-5 calc($--space * 5),
+        $--sunpillar-clr-6 calc($--space * 6),
+        $--sunpillar-clr-1 calc($--space * 7)
+      ),
+      repeating-linear-gradient(
+        $--angle,
+        #0e152e 0%,
+        hsl(180, 10%, 60%) 3.8%,
+        hsl(180, 29%, 66%) 4.5%,
+        hsl(180, 10%, 60%) 5.2%,
+        #0e152e 10%,
+        #0e152e 12%
+      ),
+      radial-gradient(
+        farthest-corner circle at var(--pointer-x) var(--pointer-y),
+        hsla(0, 0%, 0%, 0.1) 12%,
+        hsla(0, 0%, 0%, 0.15) 20%,
+        hsla(0, 0%, 0%, 0.25) 120%
+      );
+
+    background-position:
+      center center,
+      0% var(--background-y),
+      calc((var(--background-x) + (var(--background-y) * 0.2)) * -1) calc(var(--background-y) * -1),
+      var(--background-x) var(--background-y);
+
+    background-size:
+      $--imgsize,
+      200% 400%,
+      195% 100%,
+      200% 100%;
+
+    filter: brightness(calc((var(--pointer-from-center) * 0.4) + 0.8)) contrast(1.5) saturate(1.25);
+    mix-blend-mode: exclusion;
+  }
+
+  &--shine {
+    content: '';
+    -webkit-mask-image: none;
+    mask-image: none;
+
+    background-image: radial-gradient(
+      farthest-corner circle at var(--pointer-x) var(--pointer-y),
+      hsl(0, 0%, 100%) 0%,
+      hsla(0, 0%, 0%, 0) 40%
+    );
+    background-position: center;
+    background-size: cover;
+    mix-blend-mode: overlay;
+
+    opacity: 0.75;
+    z-index: 1;
+  }
+}
