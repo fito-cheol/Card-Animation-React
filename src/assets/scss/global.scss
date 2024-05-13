@@ -75,6 +75,7 @@ $cosmos-top-trans: url('../../assets/img/cosmos-top-trans.png');
   height: 100%;
   position: absolute;
   z-index: 1;
+  transition: all 0.2s ease;
 }
 @mixin masking($mask) {
   -webkit-mask-image: $mask;
